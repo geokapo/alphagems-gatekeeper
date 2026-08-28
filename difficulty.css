@@ -1,0 +1,53 @@
+@media (min-width: 761px) {
+  /* Keep the complete crystal crest below the desktop HUD. */
+  #gate { top: clamp(155px,19vh,185px); }
+
+  .rules { gap: 12px; }
+  .rules span {
+    padding: 13px 17px;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: .035em;
+  }
+  .rules i { margin-right: 8px; font-size: 14px; }
+}
+
+.difficulty-picker { width: min(460px,100%); margin: 13px 0; }
+.difficulty-picker > small { display: block; margin-bottom: 6px; color: #cbbdd6; font: 800 7px monospace; letter-spacing: .13em; }
+.difficulty-picker > div { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.difficulty-picker button {
+  padding: 9px 11px;
+  border: 1px solid rgba(216,180,254,.34);
+  border-radius: 8px;
+  background: rgba(15,5,27,.74);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+.difficulty-picker button b { display: block; font: 900 12px "Arial Black",Arial; }
+.difficulty-picker button span { display: block; margin-top: 3px; color: #a996b7; font: 700 6px monospace; letter-spacing: .08em; }
+.difficulty-picker button.active { border-color: #d8b4fe; background: linear-gradient(135deg,rgba(126,34,206,.82),rgba(50,13,79,.9)); box-shadow: 0 0 20px rgba(168,85,247,.4); }
+.difficulty-picker button.active span { color: #fff; }
+
+.pause-actions,.checkpoint-actions { display: flex; justify-content: center; gap: 9px; }
+.restart-button {
+  padding: 13px 16px;
+  border: 1px solid rgba(255,145,167,.55);
+  border-radius: 6px;
+  background: rgba(78,14,34,.36);
+  color: #ffd8e0;
+  font: 900 9px monospace;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+.restart-button:hover { background: rgba(132,22,55,.62); }
+
+@media (max-width: 760px) {
+  .rules span { padding: 10px 11px; font-size: 8px; }
+  .rules i { margin-right: 6px; font-size: 11px; }
+  .difficulty-picker { margin: 9px 0; }
+  .difficulty-picker button { padding: 8px; }
+  .difficulty-picker button b { font-size: 10px; }
+  .pause-actions,.checkpoint-actions { flex-direction: column; }
+  .pause-actions button,.checkpoint-actions button { width: 100%; }
+}

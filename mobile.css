@@ -1,0 +1,119 @@
+/* A purpose-built mobile arcade layout. Desktop controls remain unchanged. */
+@media (max-width: 760px) {
+  #hud {
+    height: 104px;
+    padding: 7px 8px 40px;
+    grid-template-columns: 1fr minmax(104px,auto) 52px;
+    gap: 6px;
+    background: linear-gradient(180deg,rgba(6,2,14,.98),rgba(13,4,25,.93));
+    border-bottom-color: rgba(216,180,254,.5);
+  }
+
+  .brand img { width: 32px; height: 32px; }
+  .brand span { font-size: 5px; letter-spacing: .08em; }
+  .level-chip { min-width: 0; padding: 5px 7px; }
+  .level-chip small { font-size: 6px; }
+  .level-chip strong { font-size: 9px; }
+  .timer { width: 46px; height: 46px; }
+  .timer small { font-size: 6px; }
+  .timer b { font-size: 21px; }
+
+  .hud-stats {
+    top: 63px;
+    left: 50%;
+    width: min(268px,74vw);
+    height: 36px;
+    transform: translateX(-50%);
+    gap: 3px;
+  }
+  .hud-stats > div { min-width: 0; flex: 1; padding: 4px 5px; }
+  .hud-stats small { font-size: 5px; }
+  .hud-stats b { font-size: 14px; }
+
+  .heat-panel,.rush-panel {
+    top: 108px;
+    bottom: auto;
+    width: calc(50% - 10px);
+    padding: 6px 8px;
+  }
+  .heat-panel { left: 6px; }
+  .rush-panel { right: 6px; }
+  .heat-panel > div:first-child,.rush-panel > div:first-child { font-size: 6px; }
+  .heat-track,.rush-track { height: 5px; margin-top: 4px; }
+
+  .allies {
+    inset: 144px 6px auto;
+    align-items: flex-start;
+  }
+  .ally {
+    min-width: 0;
+    width: 126px;
+    height: 48px;
+    padding: 4px 6px;
+    gap: 5px;
+    background: linear-gradient(135deg,rgba(26,8,42,.9),rgba(8,3,17,.74));
+  }
+  .portrait,.safz-ally > img { width: 39px; height: 39px; flex: 0 0 39px; }
+  .portrait img { width: 90px; }
+  .ally small { font-size: 4px; }
+  .ally b { font-size: 10px; }
+  .ally span { display: none; }
+
+  #gate {
+    top: 27%;
+    width: 145px;
+    height: 128px;
+  }
+  .gate-banner {
+    top: -59px;
+    width: min(320px,86vw);
+  }
+
+  #targets { inset: 146px 0 76px; }
+  .applicant { width: 102px; height: 102px; }
+  .dm-bubble { max-width: 164px; padding: 9px 10px; font-size: 12px; line-height: 1.16; }
+  .scan-tag { top: -58px; max-width: 160px; font-size: 8px; }
+
+  #player {
+    width: 138px;
+    height: 232px;
+    bottom: -25px;
+    filter: drop-shadow(0 12px 10px rgba(0,0,0,.68));
+  }
+  .player-name { bottom: 25px; }
+  #gem-origin { left: 87%; top: 12%; }
+
+  #move-controls { display: none; }
+  .instruction {
+    bottom: 58px;
+    width: auto;
+    max-width: calc(100% - 28px);
+    padding: 7px 10px;
+    white-space: nowrap;
+    font-size: 6px;
+  }
+
+  #sound-toggle,#pause-toggle {
+    top: auto;
+    bottom: max(8px,env(safe-area-inset-bottom));
+    min-width: 76px;
+    height: 42px;
+    padding: 7px 8px;
+    border-color: rgba(216,180,254,.55);
+    font-size: 8px;
+    backdrop-filter: blur(9px);
+  }
+  #sound-toggle { left: 7px; right: auto; }
+  #pause-toggle { right: 7px; }
+
+  .rush-shard { width: 48px; height: 58px; }
+  .rush-shard::before { font-size: 44px; }
+  .rush-shard::after { top: 48px; font-size: 6px; }
+}
+
+@media (max-width: 380px) and (max-height: 700px) {
+  .ally { width: 116px; }
+  #gate { top: 29%; }
+  .gate-banner { width: 292px; }
+  #player { width: 124px; height: 208px; }
+}

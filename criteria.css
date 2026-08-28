@@ -1,0 +1,62 @@
+.dm-bubble > span { display: block; }
+.dm-bubble > span + span {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(216,180,254,.28);
+  color: #e9d5ff;
+}
+.applicant.lines-3 .dm-bubble { font-size: 12px; }
+
+/* Safz now speaks in a compact comic-style bubble instead of a giant title card. */
+.ending-caption {
+  left: auto;
+  right: 31%;
+  top: 22%;
+  bottom: auto;
+  width: min(340px,36%);
+  padding: 17px 19px;
+  text-align: left;
+  transform: translateY(12px);
+  border: 2px solid #eadfff;
+  border-radius: 20px 20px 5px 20px;
+  background: rgba(14,5,25,.95);
+  box-shadow: 0 0 32px rgba(168,85,247,.58),inset 0 0 22px rgba(126,34,206,.15);
+  animation: safzSpeechIn .55s .3s ease-out forwards;
+}
+.ending-caption::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 14px;
+  border: 12px solid transparent;
+  border-left-color: #eadfff;
+}
+.ending-caption b {
+  margin: 0 0 7px;
+  font-size: 11px;
+}
+.ending-caption p {
+  margin: 0;
+  font: 800 clamp(17px,1.65vw,24px)/1.25 Inter,Arial,sans-serif;
+  letter-spacing: 0;
+}
+@keyframes safzSpeechIn { to { opacity: 1; transform: translateY(0); } }
+
+.lesson-card > div { grid-template-columns: repeat(5,1fr); }
+
+@media (max-width: 760px) {
+  .dm-bubble > span + span { margin-top: 4px; padding-top: 4px; }
+  .applicant.lines-2 .dm-bubble { font-size: 10.5px; }
+  .applicant.lines-3 .dm-bubble { max-width: 184px; font-size: 9.5px; }
+  .ending-caption {
+    left: 7%;
+    right: auto;
+    top: 17%;
+    bottom: auto;
+    width: 66%;
+    padding: 12px 14px;
+  }
+  .ending-caption p { font-size: clamp(15px,4.7vw,20px); }
+  .ending-caption b { font-size: 9px; }
+  .lesson-card > div { grid-template-columns: 1fr; }
+}

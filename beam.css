@@ -1,0 +1,55 @@
+/* Layered purple crystal laser: one continuous beam, no dotted projectile trail. */
+.energy-beam {
+  position: absolute;
+  z-index: 9;
+  height: 34px;
+  transform-origin: 0 50%;
+  transform: translateY(-50%) rotate(var(--angle)) scaleX(0);
+  animation: beamFire .42s cubic-bezier(.15,.7,.2,1) forwards;
+  filter: drop-shadow(0 0 9px #d8b4fe) drop-shadow(0 0 24px #9333ea);
+}
+.energy-beam b {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 39%,96% 12%,100% 50%,96% 88%,0 61%);
+  background: linear-gradient(90deg,rgba(126,34,206,.35),#7e22ce 12%,#c026d3 56%,#e879f9 88%,#fff);
+  filter: blur(4px);
+  box-shadow: 0 0 30px #7e22ce;
+}
+.energy-beam span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px;
+  height: 10px;
+  clip-path: polygon(0 32%,97% 0,100% 50%,97% 100%,0 68%);
+  background: linear-gradient(90deg,#c084fc,#f0abfc 48%,#fff 85%);
+  box-shadow: 0 0 5px #fff,0 0 13px #e879f9,0 0 25px #7e22ce;
+}
+.energy-beam::before,.energy-beam::after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  right: 3%;
+  height: 3px;
+  background: repeating-linear-gradient(90deg,transparent 0 5%,#f5d0fe 7% 10%,transparent 12% 17%);
+  filter: drop-shadow(0 0 5px #e879f9);
+  opacity: .9;
+}
+.energy-beam::before { top: 5px; transform: skewY(-2deg); }
+.energy-beam::after { bottom: 5px; transform: skewY(2deg); }
+@keyframes beamFire {
+  0% { opacity: 0; transform: translateY(-50%) rotate(var(--angle)) scaleX(.02); }
+  12% { opacity: 1; transform: translateY(-50%) rotate(var(--angle)) scaleX(1); }
+  55% { opacity: 1; filter: drop-shadow(0 0 13px #fff) drop-shadow(0 0 34px #a855f7); }
+  100% { opacity: 0; transform: translateY(-50%) rotate(var(--angle)) scaleX(1); }
+}
+@media(max-width:760px) {
+  #gate { top: 14%; width: 190px; height: 155px; }
+  .gate-brand { gap: 5px; padding: 9px 14px; }
+  .gate-brand strong { font-size: 20px; }
+  .gate-brand small { font-size: 8px; }
+  .energy-beam { height: 27px; }
+  .energy-beam span { top: 9px; height: 9px; }
+  .ending-safz { right: -8%; height: 58%; }
+}

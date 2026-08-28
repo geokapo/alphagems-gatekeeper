@@ -1,0 +1,71 @@
+.gem-wallet b { color: #e9d5ff; text-shadow: 0 0 12px #a855f7; }
+
+.role-ladder {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: min(540px,100%);
+  margin: 12px 0 4px;
+  color: #cbbdd6;
+  font: 900 10px monospace;
+}
+.role-ladder span { padding: 10px 13px; border: 1px solid rgba(216,180,254,.4); border-radius: 8px; background: rgba(12,4,22,.78); }
+.role-ladder b { color: #f5d0fe; font-size: 14px; text-shadow: 0 0 10px #a855f7; }
+.role-ladder i { color: #a855f7; font-style: normal; }
+
+.gem-reward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin: 9px auto 14px;
+  padding: 11px 14px;
+  border: 1px solid rgba(216,180,254,.48);
+  border-radius: 10px;
+  background: linear-gradient(135deg,rgba(126,34,206,.28),rgba(12,4,22,.86));
+  box-shadow: 0 0 24px rgba(168,85,247,.25);
+}
+.gem-reward b { color: #fff; font: 900 23px "Arial Black",Arial; text-shadow: 0 0 14px #c084fc; }
+.gem-reward span { color: #d8b4fe; font: 800 8px monospace; letter-spacing: .07em; }
+
+.final-role-card { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 13px 0; }
+.final-role-card > span { padding: 11px; border: 1px solid rgba(216,180,254,.32); background: rgba(126,34,206,.13); }
+.final-role-card small { display: block; color: #a996b7; font: 700 6px monospace; letter-spacing: .1em; }
+.final-role-card b { display: block; margin-top: 5px; color: #f5d0fe; font: 900 17px "Arial Black",Arial; text-shadow: 0 0 14px rgba(192,132,252,.7); }
+
+.diamond-drop {
+  position: absolute;
+  z-index: 24;
+  width: 42px;
+  height: 42px;
+  transform: translate(-50%,-50%);
+  background: url('assets/collectible-gem-v1.png') center/contain no-repeat;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 18px #a855f7);
+  animation: diamondSpin .75s ease-in-out infinite alternate;
+}
+.diamond-drop::after { content: "+1◆"; position: absolute; left: 50%; top: 88%; transform: translateX(-50%); color: #fff; font: 900 8px monospace; text-shadow: 0 2px 6px #000,0 0 9px #a855f7; }
+.diamond-drop.missed { opacity: 0; transform: translate(-50%,-50%) scale(.25); transition: .25s; }
+@keyframes diamondSpin { to { transform: translate(-50%,-50%) scale(1.16) rotate(7deg); filter: drop-shadow(0 0 11px #fff) drop-shadow(0 0 25px #d946ef); } }
+.role-unlock { position: absolute; z-index: 60; transform: translate(-50%,-50%); padding: 15px 22px; border: 2px solid #fff; border-radius: 12px; background: rgba(45,10,73,.96); color: #fff; font: 900 clamp(20px,3vw,38px) "Arial Black",Arial; text-shadow: 0 0 16px #c084fc; box-shadow: 0 0 48px #7e22ce; animation: roleUnlock 1.55s ease-out forwards; }
+@keyframes roleUnlock { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.25); } 20%,72% { opacity: 1; transform: translate(-50%,-50%) scale(1); } 100% { opacity: 0; transform: translate(-50%,-80%) scale(1.08); } }
+
+@media (min-width: 761px) {
+  .intro-cast { inset: 0 0 0 58%; }
+  .intro-player { right: 16%; bottom: -4%; height: 64%; }
+  .intro-safz { right: -2%; bottom: 0; height: 45%; opacity: .72; }
+}
+
+@media (max-width: 760px) {
+  .hud-stats { width: min(322px,88vw); }
+  .hud-stats b { font-size: 12px; }
+  .gem-wallet small { font-size: 4px; }
+  .role-ladder { gap: 3px; margin: 8px 0 2px; font-size: 6px; }
+  .role-ladder span { padding: 7px 5px; }
+  .role-ladder b { font-size: 9px; }
+  .diamond-drop { width: 34px; height: 34px; }
+  .gem-reward { flex-direction: column; gap: 4px; padding: 8px; }
+  .gem-reward b { font-size: 19px; }
+  .gem-reward span { font-size: 7px; text-align: center; }
+  .final-role-card b { font-size: 13px; }
+}

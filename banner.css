@@ -1,0 +1,54 @@
+#gate {
+  width: 300px;
+  height: 205px;
+  top: 13%;
+  filter: drop-shadow(0 0 32px rgba(126, 34, 206, .9));
+}
+
+#gate::before {
+  opacity: .6;
+}
+
+.gate-banner {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: -76px;
+  width: min(520px, 43vw);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+  filter:
+    drop-shadow(0 10px 5px rgba(2, 0, 8, .8))
+    drop-shadow(0 0 9px rgba(255, 255, 255, .42))
+    drop-shadow(0 0 27px rgba(192, 132, 252, .86));
+  animation: gateBannerPulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes gateBannerPulse {
+  from { transform: translateX(-50%) scale(.985); filter: drop-shadow(0 10px 5px rgba(2,0,8,.8)) drop-shadow(0 0 7px rgba(255,255,255,.35)) drop-shadow(0 0 20px rgba(168,85,247,.68)); }
+  to { transform: translateX(-50%) scale(1.025); filter: drop-shadow(0 10px 5px rgba(2,0,8,.8)) drop-shadow(0 0 13px rgba(255,255,255,.62)) drop-shadow(0 0 38px rgba(216,180,254,.98)); }
+}
+
+@media (max-width: 760px) {
+  #gate {
+    top: 17%;
+    width: 150px;
+    height: 130px;
+  }
+
+  .gate-banner {
+    top: -47px;
+    width: min(330px, 82vw);
+  }
+}
+
+@media (max-height: 650px) and (min-width: 761px) {
+  #gate { top: 15%; }
+  .gate-banner { top: -70px; width: min(470px, 40vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-banner { animation: none; }
+}

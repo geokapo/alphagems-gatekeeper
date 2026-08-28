@@ -1,0 +1,60 @@
+#pause-toggle {
+  position: absolute;
+  z-index: 31;
+  right: 12px;
+  top: 115px;
+  min-width: 86px;
+  padding: 8px 10px;
+  border: 1px solid rgba(216,180,254,.55);
+  border-radius: 7px;
+  background: rgba(8,3,18,.82);
+  color: #fff;
+  font: 900 9px monospace;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
+#pause-toggle:hover { background: rgba(126,34,206,.72); }
+#pause-screen { z-index: 80; background: rgba(5,1,11,.84); backdrop-filter: blur(14px); align-items: center; justify-content: center; }
+.pause-card {
+  width: min(520px,90vw);
+  padding: 42px;
+  text-align: center;
+  background: linear-gradient(145deg,rgba(46,16,72,.98),rgba(9,3,17,.98));
+  border: 2px solid #c084fc;
+  box-shadow: 0 0 70px rgba(126,34,206,.55);
+}
+.pause-card h2 { margin: 9px 0; font: 900 clamp(48px,8vw,84px)/.9 "Arial Black",Arial; color: #fff; }
+.pause-card>p:not(.eyebrow) { margin: 16px 0 24px; color: #cbbdd6; }
+.result-card { max-height: 92vh; overflow-y: auto; }
+.lesson-card { margin: 18px 0; padding: 15px; text-align: left; border: 1px solid rgba(216,180,254,.4); background: rgba(139,92,246,.12); }
+.lesson-card>small { color: #c084fc; font: 800 7px monospace; letter-spacing: .12em; }
+.lesson-card h3 { margin: 7px 0 12px; font: 900 16px/1.1 "Arial Black",Arial; color: #fff; }
+.lesson-card>div { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.lesson-card span { padding: 9px; background: rgba(7,2,15,.62); font: 800 8px/1.35 monospace; color: #e9ddff; }
+.lesson-card span b { display: block; margin-bottom: 4px; color: #c084fc; font-size: 12px; }
+#ending-cutscene.active .ending-stage { animation-duration: 8.5s; }
+#skip-ending { right: 3%; top: 4%; bottom: auto; }
+.ending-caption {
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: 12%;
+  width: min(760px,82%);
+  padding: 15px 24px;
+  text-align: center;
+  transform: translate(-50%,16px);
+  background: rgba(7,2,15,.94);
+  border: 2px solid #d8b4fe;
+  box-shadow: 0 0 38px rgba(168,85,247,.7),inset 0 0 28px rgba(126,34,206,.16);
+  animation: endingCaptionIn .7s .2s ease-out forwards;
+}
+.ending-caption p { font-size: clamp(25px,3.4vw,47px); }
+@keyframes endingCaptionIn { to { opacity: 1; transform: translate(-50%,-8px); } }
+@media(max-width:760px) {
+  #pause-toggle { right: 7px; top: 101px; min-width: 72px; font-size: 8px; padding: 7px; }
+  .pause-card { padding: 30px 18px; }
+  .lesson-card>div { grid-template-columns: 1fr; }
+  .lesson-card span { font-size: 9px; }
+  .ending-caption { left: 50%; top: auto; bottom: 11%; width: 90%; padding: 12px 10px; }
+  .ending-caption p { font-size: clamp(20px,6vw,31px); }
+}

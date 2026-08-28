@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#080312">
+  <meta name="description" content="Guard the AlphaGEMs gate. Reject lazy DMs, admit real cookers, and survive all five levels.">
+  <meta property="og:title" content="AlphaGEMs: Crystal Gatekeeper">
+  <meta property="og:description" content="Can you separate real cookers from 50+ bad DMs?">
+  <meta property="og:image" content="assets/og-preview.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>AlphaGEMs: Crystal Gatekeeper</title>
+  <link rel="stylesheet" href="style.css?v=purple-beam-7">
+  <link rel="stylesheet" href="beam.css?v=purple-beam-7">
+  <link rel="stylesheet" href="features.css?v=ending-layout-9">
+  <link rel="stylesheet" href="gameplay.css?v=banner-12">
+  <link rel="stylesheet" href="banner.css?v=banner-12">
+  <link rel="stylesheet" href="mobile.css?v=mobile-auto-13">
+  <link rel="stylesheet" href="criteria.css?v=criteria-14">
+  <link rel="stylesheet" href="difficulty.css?v=rules-type-18">
+  <link rel="stylesheet" href="roles.css?v=catch-gems-20">
+</head>
+<body>
+  <main id="game"><section id="arena" aria-label="AlphaGEMs Crystal Gate">
+    <header id="hud">
+      <div class="brand"><img src="assets/alphagem-logo.webp" alt="AlphaGEMs"><span>CRYSTAL<br><b>GATEKEEPER</b></span></div>
+      <div class="level-chip"><small>LEVEL <b id="level-number">1</b>/5</small><strong id="level-title">WEN INVITE?</strong></div>
+      <div class="hud-stats"><div><small>SCORE</small><b id="score">0</b></div><div><small>ACCURACY</small><b id="accuracy">100%</b></div><div><small>COMBO</small><b id="combo">x0</b></div><div class="gem-wallet"><small>DIAMONDS</small><b id="gem-count">◆ 0</b></div></div>
+      <div class="gate-health"><small>GATE</small><div id="hearts">◆ ◆ ◆</div></div>
+      <div class="timer"><small>TIME</small><b id="timer">32</b></div>
+    </header>
+
+    <div class="allies">
+      <article class="ally tulip-ally"><div class="portrait tulip"><img src="assets/reviewers.webp" alt="Tulip"></div><div><small>SCANNER</small><b>TULIP</b><span id="tulip-callout">PROOF SCAN READY</span></div></article>
+      <article class="ally safz-ally"><div><small>GATE MASTER</small><b>SAFZ</b><span id="safz-callout">READ BEFORE YOU FIRE</span></div><img src="assets/safz-cutout-v2.png" alt="Safz"></article>
+    </div>
+
+    <div id="gate" aria-hidden="true"><i></i><img class="gate-banner" src="assets/alphagems-banner-v2.png" alt=""></div>
+    <div id="targets" aria-live="polite"></div><div id="effects" aria-hidden="true"></div>
+    <div id="player" aria-label="Tzogirl facing the applicants with the AlphaGEM crystal"><div class="player-name">@TZOGIRL</div><img src="assets/player-gatekeeper-v5.png" alt="Tzogirl facing the AlphaGEMs gate"><div id="gem-origin"></div></div>
+    <div class="heat-panel"><div><span>LASER HEAT</span><b id="heat-label">READY</b></div><div class="heat-track"><i id="heat-bar"></i></div></div><div class="rush-panel"><div><span>CRYSTAL RUSH</span><b id="rush-label">CHARGE</b></div><div class="rush-track"><i id="rush-bar"></i></div></div>
+    <p class="instruction" id="instruction">READ THE DM · TAP TO FIRE · LET REAL COOKERS PASS</p><button id="sound-toggle" aria-label="Toggle background music">MUSIC ON</button><button id="pause-toggle" aria-label="Pause game">PAUSE</button><audio id="safz-voice" src="assets/safz-ending-voice-v2.mp3" preload="auto" playsinline></audio>
+
+    <section id="intro" class="overlay active">
+      <div class="intro-copy"><p class="eyebrow">50+ DMs. ONLY THE REAL COOKERS GET IN.</p><h1>CRYSTAL<br><em>GATEKEEPER</em></h1><p>Read every application, blast the lazy DMs and move fast to catch the AlphaGEM diamonds they drop.</p><div class="rules"><span><i>✕</i> BLAST “WEN INVITE?”</span><span><i>✓</i> ADMIT REAL PROOF</span></div><div class="role-ladder"><span><b>0◆</b> GEMCCESS (TEMP)</span><i>→</i><span><b>10◆</b> GEM</span><i>→</i><span><b>20◆</b> HONORARY GEM</span></div><div class="difficulty-picker"><small>CHOOSE ALL 5 LEVELS</small><div><button class="active" data-difficulty="easy"><b>EASY</b><span>LEARN THE RULES</span></button><button data-difficulty="hard"><b>HARD</b><span>CHAOS FROM LEVEL 1</span></button></div></div><button id="start" class="primary">ENTER LEVEL 1 <b>→</b></button><small>MOVE · FIRE · CATCH DIAMONDS · UNLOCK YOUR GAME ROLE</small></div>
+      <div class="intro-cast"><img class="intro-player" src="assets/player-runner-v3.png" alt=""><img class="intro-safz" src="assets/safz-cutout-v2.png" alt=""></div>
+    </section>
+
+    <section id="briefing" class="overlay"><div class="briefing-card"><p class="eyebrow">GATE PROTOCOL <span id="brief-level">01</span></p><h2 id="brief-title">WEN INVITE?</h2><p id="brief-copy">Obvious lazy DMs. Tulip scans almost everyone.</p><div class="brief-stats"><span><small>TIME</small><b id="brief-time">32s</b></span><span><small>SCANNER</small><b id="brief-scan">HIGH</b></span><span><small>THREATS</small><b id="brief-threat">1 AT A TIME</b></span></div><button id="continue" class="primary">START LEVEL <b>→</b></button></div></section>
+
+    <section id="pause-screen" class="overlay" aria-label="Game paused"><div class="pause-card"><p class="eyebrow">CRYSTAL FROZEN</p><h2>PAUSED</h2><p>The applicants and timer are waiting for you</p><div class="pause-actions"><button id="resume-game" class="primary">RESUME <b>→</b></button><button id="restart-from-pause" class="restart-button">RESTART FROM LEVEL 1</button></div></div></section>
+
+    <section id="checkpoint" class="overlay"><div class="checkpoint-card"><p class="eyebrow" id="checkpoint-label">LEVEL CLEARED</p><h2 id="checkpoint-title">GATE SECURED</h2><div class="checkpoint-score"><b id="checkpoint-accuracy">100%</b><span>DECISION<br>ACCURACY</span></div><div class="gem-reward"><b id="checkpoint-gems">3 ◆ CAUGHT</b><span id="checkpoint-role">GEMCCESS (TEMP) · 7◆ TO GEM</span></div><p id="checkpoint-copy">Safz: “Let her cook.”</p><div class="checkpoint-actions"><button id="next-level" class="primary">NEXT LEVEL <b>→</b></button><button id="restart-from-checkpoint" class="restart-button">RESTART FROM LEVEL 1</button></div></div></section>
+
+    <section id="ending-cutscene" class="overlay" aria-label="Victory cutscene"><div class="cinema-bar top"></div><div class="ending-glow"></div><div class="ending-stage"><img class="ending-tzogirl" src="assets/player-runner-v3.png" alt="Tzogirl"><img class="ending-safz" src="assets/safz-cutout-v2.png" alt="Safz"><div class="ending-caption" role="status"><b>SAFZ</b><p>Well done, my dear<br>You are a true AlphaGEMs waifu</p></div><div class="ending-gem">◆</div><button id="skip-ending">VIEW GATE REPORT →</button></div><div class="cinema-bar bottom"></div></section>
+
+    <section id="result" class="overlay"><div class="result-card"><p class="eyebrow">ALPHAGEMS FINAL GATE REPORT</p><h2 id="rank">CRYSTAL GUARDIAN</h2><div class="result-score"><b id="final-score">0</b><span>TOTAL<br>SCORE</span></div><div class="final-role-card"><span><small>DIAMONDS EARNED</small><b id="final-gems">◆ 0</b></span><span><small>GAME ROLE UNLOCKED</small><b id="final-role">GEMCCESS (TEMP)</b></span></div><div class="result-grid"><div><small>REJECTED</small><b id="final-kills">0</b></div><div><small>ADMITTED</small><b id="final-saved">0</b></div><div><small>WRONG KILLS</small><b id="final-wrong">0</b></div><div><small>BAD ENTRIES</small><b id="final-leaks">0</b></div><div><small>ACCURACY</small><b id="final-accuracy">0%</b></div><div><small>BEST COMBO</small><b id="final-combo">x0</b></div></div><div class="lesson-card"><small>SAFZ'S ACTUAL ALPHAGEMS GATE RULES</small><h3>DON'T JUST ASK FOR AN INVITE — SHOW WHY YOU STAND OUT</h3><div><span><b>01</b> EXPLAIN THE VALUE YOU ADD</span><span><b>02</b> SHOW WHO KNOWS YOU INSIDE</span><span><b>03</b> SHARE ALPHA, WALLET + PNL OR YOUR BEST POSTS</span><span><b>04</b> ONLY 10–15 SPOTS OPEN EACH MONTH</span><span><b>05</b> REAL OGs SOMETIMES WAITED 6–7 MONTHS OR YEARS</span></div></div><blockquote id="final-quote">SAFZ: “WELL DONE, MY DEAR — YOU ARE A TRUE ALPHAGEMS WAIFU”</blockquote><div class="result-actions"><button id="share-x" class="x-button">𝕏 SHARE RESULT</button><button id="replay" class="secondary">PLAY AGAIN</button></div><small class="tags">@tzogirl · @0xAlphaGEMs</small></div></section>
+  </section></main>
+  <script src="game.js?v=stadium-music-23"></script>
+</body>
+</html>

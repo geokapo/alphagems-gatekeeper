@@ -32,6 +32,7 @@
 .lesson-card>div { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
 .lesson-card span { padding: 9px; background: rgba(7,2,15,.62); font: 800 8px/1.35 monospace; color: #e9ddff; }
 .lesson-card span b { display: block; margin-bottom: 4px; color: #c084fc; font-size: 12px; }
+.lesson-card>p { margin: 10px 0 0; color: #a99ab8; font: 800 7px/1.4 monospace; letter-spacing: .08em; text-align: center; }
 #ending-cutscene.active .ending-stage { animation-duration: 8.5s; }
 #skip-ending { right: 3%; top: 4%; bottom: auto; }
 .ending-caption {
